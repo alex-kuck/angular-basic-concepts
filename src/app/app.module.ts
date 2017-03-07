@@ -5,10 +5,16 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { CommitMasterComponent } from './commit-master/commit-master.component';
+import { CommitDetailComponent } from './commit-detail/commit-detail.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    CommitMasterComponent,
+    CommitDetailComponent
   ],
   imports: [
     BrowserModule,
