@@ -1,1 +1,12 @@
-<app-commit-detail></app-commit-detail>
+<div class="row">
+  <div class="col-md-6">
+    <ul>
+      <li *ngFor="let event of gitHubEvents$ | async">
+        <span>{{event.sha}}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <app-commit-detail></app-commit-detail>
+  </div>
+</div>
