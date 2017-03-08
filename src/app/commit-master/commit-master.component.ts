@@ -14,11 +14,16 @@ import { Event } from '../model/event';
 export class CommitMasterComponent implements OnInit {
 
   gitHubEvents$: Observable<Array<Event>>;
+  selectedEvent: Event = null;
 
   constructor(private gitHubService: GitHubService) { }
 
   ngOnInit() {
     this.gitHubEvents$ = this.gitHubService.fetchGitHubData();
+  }
+
+  selectEvent(event) {
+    this.selectedEvent = event;
   }
 
 }

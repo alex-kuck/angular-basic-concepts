@@ -1,0 +1,17 @@
+ul {
+  list-style-type: none;
+}
+
+li {
+    font-size: bolder;
+    padding: 5px;
+    cursor: pointer;
+}
+
+li:hover>span {
+    background-color: lightskyblue;
+}
+
+li.selected>span {
+    background-color: lightblue;
+}

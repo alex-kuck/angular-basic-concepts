@@ -1,12 +1,12 @@
 <div class="row">
   <div class="col-md-6">
     <ul>
-      <li *ngFor="let event of gitHubEvents$ | async">
+      <li *ngFor="let event of gitHubEvents$ | async" [class.selected]="event === selectedEvent" (click)="selectEvent(event)">
         <span>{{event.sha}}</span>
       </li>
     </ul>
   </div>
   <div class="col-md-6">
-    <app-commit-detail></app-commit-detail>
+    <app-commit-detail [event]="selectedEvent"></app-commit-detail>
   </div>
 </div>
