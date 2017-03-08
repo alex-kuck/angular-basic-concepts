@@ -1,3 +1,24 @@
-<p>
-  commit-detail works!
-</p>
+<div *ngIf="event">
+  <div class="row">
+    <div class="col-md-4">
+      <img src="{{event.author.avatar_url}}" alt="avatar_{{event.author.login}}">
+    </div>
+    <div class="col-md-8">
+      <div class="row">
+        <p>SHA: {{event.sha}}</p>
+      </div>
+      <div class="row">
+        <p>Author: {{event.author.login}}</p>
+      </div>
+      <div class="row">
+        <p>Message: {{event.commit.message}}</p>
+      </div>
+      <div class="row">
+        <p>See at <a href="{{event.url}}" target="_blank">GitHub</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="!event">
+  <p>No Event selected!</p>
+</div>
