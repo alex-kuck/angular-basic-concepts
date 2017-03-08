@@ -3,6 +3,8 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.1. It introduces some of the most basic concepts of angular. 
 Therefore it will display a list of GitHub-Commits in a Master-Detail view.
 
+A running version can be found at [https://alex-kuck.github.io/angular-basic-concepts](https://alex-kuck.github.io/angular-basic-concepts), hosted on GitHub Pages.
+
 ## Workshop Tasks
 ### 0 - Preparations
 
