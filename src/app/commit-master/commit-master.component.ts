@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
 
@@ -15,15 +15,32 @@ export class CommitMasterComponent implements OnInit {
 
   gitHubEvents$: Observable<Array<Event>>;
   selectedEvent: Event = null;
+  availableRepos = ['', 'awesome-inc/docker-elk-cyber', 'alex-kuck/angular-basic-concepts'];
+  selectedRepo = '';
 
   constructor(private gitHubService: GitHubService) { }
 
   ngOnInit() {
-    this.gitHubEvents$ = this.gitHubService.fetchGitHubData();
+    this.loadData();
+  }
+
+  loadData() {
+    if (this.selectedRepo) {
+      this.gitHubEvents$ = this.gitHubService.fetchGitHubData(this.selectedRepo);
+    } else {
+      this.gitHubEvents$ = null;
+    }
   }
 
   selectEvent(event) {
     this.selectedEvent = event;
+  }
+
+  @Input()
+  set selectRepo(repo: string) {
+    this.selectedRepo = repo === '' ? null : repo;
+    this.selectedEvent = null;
+    this.loadData();
   }
 
 }

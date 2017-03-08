@@ -11,7 +11,7 @@ export class GitHubService {
 
   constructor(private http: Http) { }
 
-  fetchGitHubData(repo: string = 'awesome-inc/docker-elk-cyber'): Observable<Array<Event>> {
+  fetchGitHubData(repo: string): Observable<Array<Event>> {
     return this.http.get(`https://api.github.com/repos/${repo}/commits`).map(response => response.json());
   }
 

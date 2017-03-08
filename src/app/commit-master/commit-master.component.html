@@ -1,5 +1,16 @@
 <div class="row">
   <div class="col-md-6">
+    <p>Please select a repo:</p>
+  </div>
+  <div class="col-md-6">
+    <select [(ngModel)]="selectRepo">
+      <option *ngFor="let repo of availableRepos" [value]="repo">{{repo}}</option>
+    </select>
+  </div>
+</div>
+<p *ngIf="!selectedRepo">There is no repository selected!</p>
+<div class="row">
+  <div class="col-md-6">
     <ul>
       <li *ngFor="let event of gitHubEvents$ | async" [class.selected]="event === selectedEvent" (click)="selectEvent(event)">
         <span>{{event.sha}}</span>
