@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { Event } from '../model/event';
 
@@ -10,10 +10,15 @@ import { Event } from '../model/event';
 export class CommitDetailComponent implements OnInit {
 
   @Input() event: Event;
+  @Output() deselect = new EventEmitter<boolean>();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  deselectClicked() {
+    this.deselect.emit(true);
   }
 
 }

@@ -18,6 +18,6 @@
     </ul>
   </div>
   <div class="col-md-6">
-    <app-commit-detail [event]="selectedEvent"></app-commit-detail>
+    <app-commit-detail [event]="selectedEvent" (deselect)="deselectEvent($event)"></app-commit-detail>
   </div>
 </div>

@@ -36,6 +36,10 @@ export class CommitMasterComponent implements OnInit {
     this.selectedEvent = event;
   }
 
+  deselectEvent() {
+    this.selectedEvent = null;
+  }
+
   @Input()
   set selectRepo(repo: string) {
     this.selectedRepo = repo === '' ? null : repo;
