@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { CommitMasterComponent } from './commit-master/commit-master.component';
 import { CommitDetailComponent } from './commit-detail/commit-detail.component';
 
+import { GitHubService } from './model/git-hub.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,9 @@ import { CommitDetailComponent } from './commit-detail/commit-detail.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    GitHubService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

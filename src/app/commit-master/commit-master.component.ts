@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+import { GitHubService } from '../model/git-hub.service';
+
+import { Event } from '../model/event';
+
 @Component({
   selector: 'app-commit-master',
   templateUrl: './commit-master.component.html',
@@ -7,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommitMasterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private gitHubService: GitHubService) { }
 
   ngOnInit() {
   }
